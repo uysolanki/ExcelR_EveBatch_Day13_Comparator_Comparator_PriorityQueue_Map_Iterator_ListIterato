@@ -1,0 +1,56 @@
+
+public class Student{ implements Comparable<Student> {
+		int rno;
+		String sname;
+		double age;
+		public int getRno() {
+			return rno;
+		}
+		public void setRno(int rno) {
+			this.rno = rno;
+		}
+		public String getSname() {
+			return sname;
+		}
+		public void setSname(String sname) {
+			this.sname = sname;
+		}
+		public double getAge() {
+			return age;
+		}
+		public void setAge(double age) {
+			this.age = age;
+		}
+		public Student() {}
+		
+		public Student(int rno, String sname, double age) {
+			super();
+			this.rno = rno;
+			this.sname = sname;
+			this.age = age;
+		}
+		
+		@Override
+		public int compareTo(Student o) {
+			return sname.compareTo(o.sname);		
+		}
+		
+		
+}
+
+---
+
+import java.util.*;  
+public class TestSort1{  
+public static void main(String args[]){  
+ArrayList<Student> al=new ArrayList<Student>();  
+al.add(new Student(101,"Vijay",23));  
+al.add(new Student(106,"Ajay",27));  
+al.add(new Student(105,"Jai",21));  
+  
+Collections.sort(al);  
+for(Student st:al){  
+System.out.println(st.rollno+" "+st.name+" "+st.age);  
+}  
+}  
+}
